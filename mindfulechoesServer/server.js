@@ -11,14 +11,14 @@ const multer = require('multer');
 const uploadMiddleware = multer({ dest: 'uploads/' });
 const fs = require('fs');
 // const { DB_URL } = require('./configs/db.config');
-const { PORT } = require('./configs/server.config');
-const { SECRET } = require('./configs/auth.config');
+// const { PORT } = require('./configs/server.config');
+// const { SECRET } = require('./configs/auth.config');
 require('dotenv').config();
 DB_URL = "mongodb+srv://riamrane:dQAzkGhAM5U5Yn5d@cluster0.2yadimn.mongodb.net/?retryWrites=true&w=majority"
 
-
+const SECRET = "yvuebicerververl";
+const PORT=4000; 
 const salt = bcrypt.genSaltSync(10);
-console.log("dbl url is ", DB_URL )
 mongoose.connect(DB_URL)
     .then(() => {
         console.log("Successfully connected to the database");
